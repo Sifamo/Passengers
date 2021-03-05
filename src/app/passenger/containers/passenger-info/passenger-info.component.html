@@ -1,0 +1,8 @@
+<div>
+    <span class="status" [ngStyle]="{background: passenger.checkedIn ? 'turquoise': 'tomato' }"></span>
+    <span *ngIf="!editable; else inputPassenger">{{index}} - {{passenger.fullName}}</span> 
+</div>
+<ng-template #inputPassenger><input [(ngModel)] = "passenger.fullName"></ng-template>
+<div>Check in date: {{passenger.checkInDate ? ( passenger.checkInDate | date: "y MMMM d" ): 'Not Checked in' }}</div>
+<div>Children: {{passenger.children?.length || 0}} </div>
+<button (click)="editPassenger()">{{editable ? "Done" : "Edit"}}</button>

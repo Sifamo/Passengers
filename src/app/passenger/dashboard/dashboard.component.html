@@ -1,0 +1,7 @@
+<h1>List of passengers:</h1> 
+<app-passenger-count [passengersCount]="passengers.length" [checkedInPassengersCount]="checkedInPassengersCount"></app-passenger-count>
+<ul>
+  <li *ngFor="let passenger of passengers; let i=index">
+    <app-passenger-info [passenger]="passenger" [index]="i"></app-passenger-info>
+  </li>
+</ul>
