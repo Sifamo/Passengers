@@ -2,6 +2,7 @@
 <app-passenger-count [passengersCount]="passengers.length" [checkedInPassengersCount]="checkedInPassengersCount"></app-passenger-count>
 <ul>
   <li *ngFor="let passenger of passengers; let i=index">
-    <app-passenger-info [passenger]="passenger" [index]="i"></app-passenger-info>
+    <app-passenger-info [passenger]="passenger" [index]="i" (editedPassenger)="editPassenger($event)" (removedPassenger)="removePassenger($event)"></app-passenger-info>
   </li>
 </ul>
+<app-passenger-add></app-passenger-add>

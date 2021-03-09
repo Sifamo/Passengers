@@ -6,3 +6,4 @@
 <div>Check in date: {{passenger.checkInDate ? ( passenger.checkInDate | date: "y MMMM d" ): 'Not Checked in' }}</div>
 <div>Children: {{passenger.children?.length || 0}} </div>
 <button (click)="editPassenger()">{{editable ? "Done" : "Edit"}}</button>
+<button (click)="removePassenger()">remove</button>

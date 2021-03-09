@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Passenger, PASSENGERS } from 'src/assets/passengers';
+import { Passenger } from 'src/assets/passengers';
 import { PassengerService } from '../passenger.service';
 
 @Component({
@@ -21,4 +21,13 @@ export class DashboardComponent implements OnInit {
     this.checkedInPassengersCount = this.passengers.filter(passenger => passenger.checkedIn).length;
   }
 
+  editPassenger({passenger, index}) {
+    this.passengerService.updatePassenger(passenger, index);
+  }
+
+  removePassenger(index: number) {
+    this.passengerService.removePassenger(index);
+  }
+
 }
+

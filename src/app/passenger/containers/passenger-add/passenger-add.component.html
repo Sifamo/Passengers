@@ -1,0 +1,16 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <div>
+        <label for="fullName" >Full Name: </label>
+        <input ngModel name="fullName" id="fullName">
+    </div>
+    <div>
+        <label for="checkedIn">checkedIn ?  </label>
+        <input type="checkbox" name="checkedIn" id="checkedIn" [(ngModel)]=checkedIn >
+    </div>
+    <div *ngIf="checkedIn">
+        <label for="checkInDate">CheckIn Date: </label>
+        <input type ="date" ngModel required name="checkInDate" id="checkInDate">
+    </div>
+    
+    <button type="submit">Add passenger</button>
+</form>

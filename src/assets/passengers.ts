@@ -11,7 +11,7 @@ export interface Passenger {
   children?: Child[]
 }
 
-export const PASSENGERS = [
+export let PASSENGERS = [
   {
     id: 1,
     fullName: "Stephen",

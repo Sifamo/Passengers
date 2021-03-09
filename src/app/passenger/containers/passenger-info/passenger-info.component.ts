@@ -11,7 +11,8 @@ export class PassengerInfoComponent implements OnInit {
   @Input() passenger: Passenger;
   @Input() index: number;
 
-  @Output() editedPassenger: EventEmitter<Passenger> = new EventEmitter();
+  @Output() editedPassenger: EventEmitter<Object> = new EventEmitter();
+  @Output() removedPassenger: EventEmitter<number> = new EventEmitter();
   editable: boolean = false;
 
 
@@ -21,6 +22,11 @@ export class PassengerInfoComponent implements OnInit {
   }
 
   editPassenger() {
+    this.editable? this.editedPassenger.emit({passenger: this.passenger, index: this.index}): "";
     this.editable = !this.editable;
+  }
+
+  removePassenger() {
+    this.removedPassenger.emit(this.index);
   }
 }
